@@ -10,4 +10,4 @@
   command: if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.orig}; fi
 
 - name: Creating new ~/.zshrc
-  command: cp /home/"{{user}}"/.oh-my-zsh/templates/zshrc.zsh-template /home/"{{user}}"/.zshrc
+  command: cp /home/{{user}}/.oh-my-zsh/templates/zshrc.zsh-template /home/{{user}}/.zshrc
