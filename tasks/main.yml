@@ -5,3 +5,9 @@
 
 - name: install oh-my-zsh
   git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+
+- name: Backing up existing ~/.zshrc
+  command: if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.orig}; fi
+
+- name: Creating new ~/.zshrc
+  command: cp /home/"{{user}}"/.oh-my-zsh/templates/zshrc.zsh-template /home/"{{user}}"/.zshrc
