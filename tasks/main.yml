@@ -1,7 +1,4 @@
 ---
 
-- name: install bash
-  apt: pkg=bash state=present
-
-- name: install bash-completion
-  apt: pkg=bash-completion state=present
+- name: install zsh
+  apt: pkg=zsh state=present
