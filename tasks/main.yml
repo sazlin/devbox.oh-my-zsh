@@ -2,3 +2,6 @@
 
 - name: install zsh
   apt: pkg=zsh state=present
+
+- name: install oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
