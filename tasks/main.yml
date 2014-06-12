@@ -12,6 +12,9 @@
 - name: Creating new ~/.zshrc
   command: cp /home/{{user}}/.oh-my-zsh/templates/zshrc.zsh-template /home/{{user}}/.zshrc
 
+- name: Add oh-my-solarized theme
+  copy: src=files/oh-my-zsh.theme dest=/home/{{user}/.oh-my-zsh/themes/oh-my-zsh.theme
+
 - name: switch to ZSH
   user: name={{user}} shell=/usr/bin/zsh
   sudo: True
