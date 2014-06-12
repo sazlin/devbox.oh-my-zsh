@@ -11,3 +11,7 @@
 
 - name: Creating new ~/.zshrc
   command: cp /home/{{user}}/.oh-my-zsh/templates/zshrc.zsh-template /home/{{user}}/.zshrc
+
+- name: switch to ZSH
+  user: name={{user}} shell=/usr/bin/zsh
+  sudo: True
