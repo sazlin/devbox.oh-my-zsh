@@ -20,10 +20,6 @@
   copy: src=~{{user}}/.oh-my-zsh/templates/zshrc.zsh-template dest=~{{user}}/.zshrc
   sudo: false
 
-- name: Add oh-my-solarized theme
-  copy: src=oh-my-zsh.theme dest=~{{user}/.oh-my-zsh/themes/oh-my-zsh.theme
-  sudo: false
-
 - name: switch to ZSH
   user: name={{user}} shell=/usr/bin/zsh
   sudo: True
