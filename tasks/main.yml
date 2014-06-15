@@ -7,12 +7,17 @@
   git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
   sudo: false
 
+- name: Checking up existing ~/.zshrc
+  stat: path=~{{user}}/.zshrc
+  register: st
+
 - name: Backing up existing ~/.zshrc
-  command: if [ -f ~{{user}}/.zshrc ]; then mv ~{{user}}/.zshrc{,.orig}; fi
+  copy: source=~{{user}}/.zshrc dest=~{{user}}.orig
   sudo: false
+  when: st.stat.isfile is defined and st.stat.isfile == true
 
 - name: Creating new ~/.zshrc
-  command: cp ~{{user}}/.oh-my-zsh/templates/zshrc.zsh-template ~{{user}}/.zshrc
+  copy: src=~{{user}}/.oh-my-zsh/templates/zshrc.zsh-template dest=~{{user}}/.zshrc
   sudo: false
 
 - name: Add oh-my-solarized theme
