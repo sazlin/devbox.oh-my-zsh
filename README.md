@@ -12,8 +12,10 @@ Example Playbook
 -------------------------
 
     - hosts: servers
+      vars:
+         user: alex
       roles:
-         - { role: ansible-zsh }
+         - devbox.oh-my-zsh
 
 License
 -------
