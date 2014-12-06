@@ -16,7 +16,7 @@
   sudo: false
 
 - name: Add oh-my-solarized theme
-  copy: src=oh-my-zsh.theme dest=~{{user}/.oh-my-zsh/themes/oh-my-zsh.theme
+  copy: src=oh-my-zsh.theme dest=~{{user}}/.oh-my-zsh/themes/oh-my-zsh.theme
   sudo: false
 
 - name: switch to ZSH
