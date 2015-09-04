@@ -15,16 +15,16 @@
   sudo: false
 
 - name: Backing up existing ~/.zshrc
-  command: if [ -f ~{{user}}/.zshrc ]; then mv ~{{user}}/.zshrc{,.orig}; fi
+  shell: if [ -f ~{{user}}/.zshrc ]; then mv -f ~{{user}}/.zshrc ~{{user}}/.zshrc.orig ; fi
   sudo: false
 
-- name: Creating new ~/.zshrc
-  command: cp ~{{user}}/.oh-my-zsh/templates/zshrc.zsh-template ~{{user}}/.zshrc
+- name: Backing up existing ~/.env.sh
+  shell: if [ -f ~{{user}}/.env.sh ]; then mv -f ~{{user}}/.env.sh ~{{user}}/.env.sh.orig ; fi
   sudo: false
 
-- name: Add oh-my-solarized theme
-  copy: src=oh-my-zsh.theme dest=~{{user}}/.oh-my-zsh/themes/oh-my-zsh.theme
-  sudo: false
+- copy: src=./files/.zshrc dest=~{{user}}/.zshrc
+
+- copy: src=./files/.env.sh dest=~{{user}}/.env.sh
 
 - name: switch to ZSH
   user: name={{user}} shell=/usr/bin/zsh
