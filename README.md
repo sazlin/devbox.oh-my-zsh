@@ -2,6 +2,8 @@ Bash
 ========
 
 Install zsh and oh-my-zsh
+Backup existing zsh config files
+Copy latest zsh config files
 
 Requirements
 ------------
@@ -26,6 +28,7 @@ Author Information
 ------------------
 
 Alex Lourie, djay.il@gmail.com
+Sean Azlin, sazlin@gmail.com
 
 Based on bash work by:
 ------------------
